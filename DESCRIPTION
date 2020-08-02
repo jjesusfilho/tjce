@@ -28,6 +28,7 @@ Imports:
     httr,
     xml2,
     tibble,
-    progress
+    progress,
+    abjutils
 URL: https://github.com/jjesusfilho/tjce
 BugReports: https://github.com/jjesusfilho/tjce/issues
