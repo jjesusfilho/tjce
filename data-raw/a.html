@@ -1,0 +1,1120 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br"><!-- InstanceBegin template="/Templates/Servico.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"b61bdf610d",applicationID:"129544928"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script><link href="/sajcas/css/spw/spwConcatenado-4.3.3-14.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="/sajcas/css/saj/saj-popup-modal.css"/>
+    <link rel="stylesheet" type="text/css" href="/sajcas/css/saj/certificados.css"/>
+    <link href="/sajcas/css/login.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="/sajcas/css/saj/saj-popup-modal.css?n=432432"/>
+    <link href="/sajcas/css/jquery/ui/ui.core.css" rel="stylesheet" type="text/css"/>
+    <link href="/sajcas/css/jquery/ui/ui.tabs.css" rel="stylesheet" type="text/css"/>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="cache-control" content="no-cache"/>
+<meta http-equiv="expires" content="0"/>
+
+<link href="https://esaj.tjce.jus.br/esaj/tema/padrao/css/esajComum.css" rel="stylesheet" type="text/css" />
+<link href="https://esaj.tjce.jus.br/esaj/tema/padrao/css/esajLayout.css" rel="stylesheet" type="text/css" />
+<link href="https://esaj.tjce.jus.br/esaj/tema/padrao/clientes/CE/css/esajLayoutCE.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+<!--
+/* botao default means o mais claro, que seria o "botï¿½o principal" */
+.spwBotaoDefault, .spwBotaoDefault-o {
+	background-image: url(https://esaj.tjce.jus.br/esaj/tema/padrao/clientes/CE/imagens/layout/fundoBotaoDefault.gif);
+}
+/* o botao secundario, menos provavel de ser clicado, mais escuro */
+.spwBotao, .spwBotao-o {
+	background-image: url(https://esaj.tjce.jus.br/esaj/tema/padrao/imagens/layout/fundoBotao.gif);
+}
+-->
+</style>
+
+
+<script language="javascript" type="text/JavaScript" src="https://esaj.tjce.jus.br/esaj/tema/padrao/js/menu.js?n=2553626853"></script>
+
+<link rel="shortcut icon" href="https://esaj.tjce.jus.br/esaj/tema/padrao/clientes/CE/imagens/favicon.ico" type="image/x-icon" />
+
+
+
+
+<script>
+    var dict = {
+        'certificado.tituloCertificadoDigital': 'Certificado digital',
+        'certificado.msgCarregandoCertificado': 'Carregando certificados...',
+        'certificado.msgNenhumCertificadoEncontrado': 'Nenhum certificado encontrado',
+        'certificado.msgErroCarregarCertificado': 'Erro ao carregar certificados',
+        'certificado.msgCertificadoExpirado': '[Expirado]',
+        'certificado.msgCertificadoNaoValido': '[Ainda não válido]',
+        'certificado.msgCertificadoNaoIcpBrasil': '[Não ICP-Brasil]',
+        'certificado.tituloProblemasAoAssinar': 'Falha de comunicação com o dispositivo de assinatura digital',
+
+        'label.contato': 'Contato',
+        'label.identificarSe': 'Identificar-se ',
+
+        'mensagem.aguarde': 'Por favor, aguarde.',
+        'mensagem.paginaNaoCarregada': 'Não foi possível carregar a página.',
+        'mensagem.marcarLido': 'Marcar como lido',
+        'mensagem.registrosSelecionados': 'Registros selecionados',
+        'mensagem.registroJaSelecionado': 'Este registro já está selecionado',
+
+        'mensagem.data.invalida': 'A data digitada é inválida.',
+        'mensagem.data.anoInvalido': 'O ano informado deve ser maior que',
+        'mensagem.data.mesInvalido': 'O mês não pode ser maior que 12.',
+        'mensagem.data.mes': 'O mês',
+        'mensagem.data.mesMaior29dias': 'não pode ter mais que 29 dias.',
+        'mensagem.data.mesMaior28dias': 'não pode ter mais que 28 dias.',
+        'mensagem.data.mesMaior31dias': 'não pode ter mais que 31 dias.',
+        'mensagem.data.mesMaior30dias': 'não pode ter mais que 30 dias.',
+
+        'mensagem.email.invalido': 'O formato do endereço de e-mail não é válido. Verifique se ele tem o formato "usuario@dominio".',
+        'mensagem.email.caracteresInvalidos': 'O endereço de e-mail possui caracteres inválidos',
+        'mensagem.email.usuarioInvalido': 'O formato do usuário informado no endereço de e-mail não é válido.',
+        'mensagem.email.ipInvalido': 'O endereço IP informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioInvalido': 'O formato do domínio informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioIncompleto': 'O domínio informado no endereço de e-mail deve possuir pelo menos duas partes. Por exemplo: "usuario@empresa.com.br".',
+
+        'mensagem.texto.tamanhoInvalido': 'O tamanho do texto digitado é maior do que o tamanho permitido. Tamanho permitido:',
+        'mensagem.texto.caracter': 'O caracter',
+        'mensagem.texto.caracterPosicaoInvalida': 'não está permitido na posição',
+
+        'mensagem.numero.numeroInvalido': 'O valor digitado não é um número válido.',
+        'mensagem.numero.numeroNaoPodeCasasDecimais': 'O número não pode conter casas decimais',
+        'mensagem.numero.numeroCasaDecimaisInvalidas': 'O número de casas decimais é inválido. O número pode conter apenas',
+        'mensagem.numero.casaDecimais': 'casas decimais',
+        'mensagem.numero.numeroInteiroInvalido': 'O número de dígitos inteiros é inválido. O número pode conter apenas',
+        'mensagem.numero.digitosInteiros': 'dígitos inteiros',
+        'mensagem.numero.numeroTamanhoInvalido': 'O número digitado não pode ser maior que',
+        'mensagem.numero.numeroZeroInvalido': 'O número digitado deve ser diferente de zero.'
+    }
+</script>
+
+
+	
+
+
+  
+
+    
+
+<script>
+    var dict = {
+        'cas.msgNenhumCertificadoEncontrado': 'Nenhum certificado encontrado',
+        'certificado.tituloCertificadoDigital': 'Certificado digital',
+
+        'cas.msgDocumentoInvalido': 'Campo "CPF" não é válido.',
+        'cas.msgNumeroProcessoInvalido': 'O número de processo digitado não é válido. Número digitado:',
+        'cas.avisoMagistrado': 'Se você é um magistrado do Tribunal de Justiça, marque esta opção.',
+        'cas.msgCarregandoCertificados': 'Carregando certificados...',
+
+        'mensagem.marcarLido': 'Marcar como lido',
+        'mensagem.registrosSelecionados': 'Registros selecionados',
+        'mensagem.registroJaSelecionado': 'Este registro já está selecionado',
+
+        'mensagem.data.invalida': 'A data digitada é inválida.',
+        'mensagem.data.anoInvalido': 'O ano informado deve ser maior que',
+        'mensagem.data.mesInvalido': 'O mês não pode ser maior que 12.',
+        'mensagem.data.mes': 'O mês',
+        'mensagem.data.mesMaior29dias': 'não pode ter mais que 29 dias.',
+        'mensagem.data.mesMaior28dias': 'não pode ter mais que 28 dias.',
+        'mensagem.data.mesMaior31dias': 'não pode ter mais que 31 dias.',
+        'mensagem.data.mesMaior30dias': 'não pode ter mais que 30 dias.',
+
+        'mensagem.email.invalido': 'O formato do endereço de e-mail não é válido. Verifique se ele tem o formato "usuario@dominio".',
+        'mensagem.email.caracteresInvalidos': 'O endereço de e-mail possui caracteres inválidos',
+        'mensagem.email.usuarioInvalido': 'O formato do usuário informado no endereço de e-mail não é válido.',
+        'mensagem.email.ipInvalido': 'O endereço IP informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioInvalido': 'O formato do domínio informado no endereço de e-mail não é válido.',
+        'mensagem.email.dominioIncompleto': 'O domínio informado no endereço de e-mail deve possuir pelo menos duas partes. Por exemplo: "usuario@empresa.com.br".',
+
+        'mensagem.texto.tamanhoInvalido': 'O tamanho do texto digitado é maior do que o tamanho permitido. Tamanho permitido:',
+        'mensagem.texto.caracter': 'O caracter',
+        'mensagem.texto.caracterPosicaoInvalida': 'não está permitido na posição',
+
+        'mensagem.numero.numeroInvalido': 'O valor digitado não é um número válido.',
+        'mensagem.numero.numeroNaoPodeCasasDecimais': 'O número não pode conter casas decimais',
+        'mensagem.numero.numeroCasaDecimaisInvalidas': 'O número de casas decimais é inválido. O número pode conter apenas',
+        'mensagem.numero.casaDecimais': 'casas decimais',
+        'mensagem.numero.numeroInteiroInvalido': 'O número de dígitos inteiros é inválido. O número pode conter apenas',
+        'mensagem.numero.digitosInteiros': 'dígitos inteiros',
+        'mensagem.numero.numeroTamanhoInvalido': 'O número digitado não pode ser maior que',
+        'mensagem.numero.numeroZeroInvalido': 'O número digitado deve ser diferente de zero.'
+    }
+</script>
+    <script src="/sajcas/js/jquery/jquery.min.js?n=a04695ea-1eaa-40ce-b819-de7e98eb7216" type="text/javascript"></script>
+    <script src="/sajcas/js/jquery/jquery.browser.min.js?n=7fba1b45-7fdc-40a3-b430-79391d821362" type="text/javascript"></script>
+    <script src="/sajcas/js/jquery/jquery.shortcuts.js?n=2766643569" type="text/javascript"></script>
+    <script src="/sajcas/js/jquery/ui/ui.core.js?n=3146777589" type="text/javascript"></script>
+    <script src="/sajcas/js/jquery/ui/ui.tabs.js?n=3982116087" type="text/javascript"></script>
+    <script src="/sajcas/js/spw/spwConcatenado-4.3.3-14.js?n=1121606411" type="text/javascript"></script>
+    <script src="/sajcas/js/spw/spwLoginCertificado-4.3.1-2.js?n=3555514256"></script>
+    <script src="/sajcas/js/jquery/jquery.blockUI.min.js?n=c19c789b-efeb-4b1a-8196-42eff6e26647"></script>
+    <script src="/sajcas/js/saj/saj-popup-modal-1.0.0-1.js?n=c7f1eab0-77a3-4084-a009-858e0c8598c9"></script>
+    <script src="/sajcas/js/saj/saj-browser.js?n=efa744fc-3995-4b15-a950-290d9b183c26"></script>
+    <script src="/sajcas/js/saj/jquery.saj.campoCPF-1.0.0-1.js?n=1377013872"></script>
+    <script src="/sajcas/js/saj/saj-tooltip.js?n=3537467264" type="text/javaScript"></script>
+    <script src="/sajcas/js/assinarHash.js?n=4018856884" type="text/javaScript"></script>
+    <script src="/sajcas/js/java/deployJava.js?n=222391575" type="text/javaScript"></script>
+
+    <script>
+
+        window.saj = window.saj || {};
+        window.saj.env = window.saj.env || {};
+        window.saj.env.root = '/sajcas';
+        window.saj.env.css = '/sajcas/css';
+        window.saj.env.js = '/sajcas/js';
+        window.saj.env.imagens = '/sajcas/imagens';
+
+        $.saj = $.saj || {};
+        $.saj.cas = $.saj.cas || {};
+        $.saj.cas.mapaCampoLocalizacao = {"ORIENT_SEX":{"cdCampo":"2","nmIdentificacao":"Orientación sexual","nmAbreviado":"ORS","nmCampo":"Orientación sexual","nuTamanhoMaximo":"50","flAtivo":"S","nmChave":"ORIENT_SEX"},"NECES_ESP":{"cdCampo":"7","nmIdentificacao":"Necesidad especial","nmAbreviado":"NES","nmCampo":"Necesidad especial","nuTamanhoMaximo":"50","flAtivo":"S","nmChave":"NECES_ESP"},"IDENT_GEN":{"cdCampo":"1","nmIdentificacao":"Identidad de género","nmAbreviado":"IDG","nmCampo":"Identidad de género","nuTamanhoMaximo":"50","flAtivo":"S","nmChave":"IDENT_GEN"},"FALEC":{"cdCampo":"3","nmIdentificacao":"Fallecido","nmAbreviado":"FAL","nmCampo":"Fallecido","nuTamanhoMaximo":"1","flAtivo":"S","nmChave":"FALEC"},"TIPO_ORG":{"cdCampo":"5","nmIdentificacao":"Tipo de organización","nmAbreviado":"TOR","nmCampo":"Tipo de organización","nuTamanhoMaximo":"50","flAtivo":"S","nmChave":"TIPO_ORG"},"VULNER":{"cdCampo":"8","nmIdentificacao":"Vulnerabilidad","nmAbreviado":"VUL","nmCampo":"Vulnerabilidad","nuTamanhoMaximo":"50","flAtivo":"S","nmChave":"VULNER"},"PATEN_MIL":{"cdCampo":"4","nmIdentificacao":"Rango militar","nmAbreviado":"PAT","nmCampo":"Rango militar","nuTamanhoMaximo":"50","flAtivo":"S","nmChave":"PATEN_MIL"},"GRUPO_ETN":{"cdCampo":"6","nmIdentificacao":"Grupo étnico","nmAbreviado":"GET","nmCampo":"Grupo étnico","nuTamanhoMaximo":"50","flAtivo":"S","nmChave":"GRUPO_ETN"}};
+        $.saj.cas.magistrado = false;
+        $.saj.cas.loginCertificado = false;
+        $.saj.cas.loginCertificadoCofreDigital = false;
+        $.saj.cas.hashDesafio = 'VXrydxVSjgGDd/55VeTaQVSgjXGB0ESH17sOKOGZcfI=';
+        $.saj.certificado = $.saj.certificado || {};
+        $.saj.certificado.licenca = 'AqYAKi5zYWphZG0udGpzcC5qdXMuYnIsKi5zZWEuc2MuZ292LmJyLCouc29mdHBsYW4uY29tLmJyLCoudGphYy5qdXMuYnIsKi50amFsLmp1cy5iciwqLnRqYW0uanVzLmJyLCoudGpjZS5qdXMuYnIsKi50am1zLmp1cy5iciwqLnRqcHIuanVzLmJyLCoudGpzYy5qdXMuYnIsKi50anNwLmp1cy5ickMAaXA0OjEwLjAuMC4wLzgsaXA0OjEyNy4wLjAuMC84LGlwNDoxNzIuMTYuMC4wLzEyLGlwNDoxOTIuMTY4LjAuMC8xNggAU3RhbmRhcmQAAAABcfpZUu/QD3s2bqedB8v9T7MiMQxcHNu0pUzGzO+7Ta++o+BbAVgPau7lzj6IUFI7RPFkPSnm0ZbCFAVBnKrqinyvE8MwEvmQhFcjlhGK+FfVV5mhVkkxSC3khDEUR8gsAPVvFncyyW2vTU2ODkyGdU0S/g62wHFtSwfGP6OFqlWpZTqbxbEGd1vfe9yHHulTYI7RcsGxaTMD6XgtPlStbOn9DxSYhN3S+4oTtIq7pUR6ETavPqYlXh5hwkxIpTe3Sf4awQucSigQ95sS9g7QpcGyVUVscm0J/rah9YwPCnHShzsttWA9aCmKrNdgFSTTo8TUOmESEP93TH6Z3dss+A==';
+
+    </script>
+    <script src="/sajcas/js/saj/saj-web-2.2.40-1.js?n=1750825673" type="text/javascript"></script>
+    <script src="/sajcas/js/sajIdentificarSeView-1.1.0-0.js?n=4071875668" type="text/javascript"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" class="esajTabelaCabecalhoCliente" summary=" ">
+	<tr>
+		<td><a href="http://www.tjce.jus.br"><img src="https://esaj.tjce.jus.br/esaj/tema/padrao/clientes/CE/imagens/layout/cabecalhoLogo.jpg" alt="Tribunal de Justiça do Ceará" height="65" width="462" /></a></td>
+		<td align="right" valign="top"><img  alt=" " src="https://esaj.tjce.jus.br/esaj/tema/padrao/clientes/CE/imagens/layout/cabecalhoImagem.jpg" width="353" height="65" /></td>
+	</tr>
+</table>
+	
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+
+
+<!-- cabecalho e-Saj -->
+<table width="100%" cellpadding="0" cellspacing="0" class="esajTabelaCabecalhoServico" summary=" ">
+	<tr>
+		<td class="esajCelulaCabecalhoServicoLogo">
+
+
+
+
+<a href="https://esaj.tjce.jus.br/esaj/redirecionarNovoEsaj.do"><img src="https://esaj.tjce.jus.br/esaj/tema/padrao/imagens/layout/eSajServico.gif" title="Voltar para página inicial do e-SAJ" alt="Voltar para página inicial do e-SAJ" width="255" height="53" border="0" /></a><img src="https://esaj.tjce.jus.br/esaj/tema/padrao/imagens/layout/eSajServicoInf.gif" alt=" " width="255" height="28" border="0" />
+</td>
+		<td class="esajCelulaCabecalhoServicoMenu">
+		    <table width="100%" border="0" cellpadding="0" cellspacing="0" summary=" ">
+				<tr>
+					<td align="right">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Devido ao alinhamento inline das imagens, elas nÃ£o podem ter nenhum tipo de espaÃ§amento entre elas, portanto Ã© necessÃ¡rio finalizar a linha iniciando um comentÃ¡rio e fechar o comentÃ¡rio imediatamente antes da abertura da nova tag-->
+<img height="24" width="47" alt=" " src="https://esaj.tjce.jus.br/esaj/tema/padrao/imagens/layout/inicioMenuSup.jpg"/><a href="https://esaj.tjce.jus.br/caixapostal"><!--
+
+    --><img height="24" width="83" border="0" alt="Caixa Postal" src="https://esaj.tjce.jus.br/esaj/tema/padrao/imagens/layout/caixaPostal.gif"/></a><!--
+    --><img height="24" width="4" alt=" " src="https://esaj.tjce.jus.br/esaj/tema/padrao/imagens/layout/menuSeparador.jpg"/><a href="https://esaj.tjce.jus.br/esaj/cadastro.do"><!--
+
+--><img src="https://esaj.tjce.jus.br/esaj/tema/padrao/imagens/layout/cadastro.gif" alt="Cadastro" width="81" height="24" border="0" /></a><!--
+
+
+    --><img height="24" width="4" alt=" " src="https://esaj.tjce.jus.br/esaj/tema/padrao/imagens/layout/menuSeparador.jpg"/><a target="blank" href="https://esaj.tjce.jus.br/WebHelp/"><!--
+    --><img height="24" width="61" border="0" alt="Ajuda do e-Saj" src="https://esaj.tjce.jus.br/esaj/tema/padrao/imagens/layout/ajuda.gif"/></a><!--
+
+
+-->
+</td>
+				</tr>
+				<tr>
+					<td class="esajCelulaIdentificacaoServico" >
+
+
+
+
+<style>
+
+    td.esajCelulaIdentificacao, td.esajCelulaIdentificacaoServico {
+        position: relative;
+    }
+
+    button.escolhaBeta {
+        border: 0;
+        background: #0078D7;
+        color: #fff;
+        margin-right: 5px;
+        font-family: verdana;
+        font-size: 12px;
+        height: 27px;
+        line-height: 14px;
+        border-radius: 0;
+        text-shadow: 1px 1px 1px #797979;
+        position: absolute;
+        top: 30px;
+        right: 3px;
+        padding: 7px 12px;
+        cursor: pointer;
+    }
+
+    button.escolhaBeta:hover {
+        background-color: #0b5c9c;
+    }
+</style>
+
+<span id="identificacao"></span>
+
+<button style="display: none" class="escolhaBeta"></button>
+
+
+
+
+    
+    
+        <script language="javascript" type="text/JavaScript" src="https://esaj.tjce.jus.br/sajcas/conteudoIdentificacao?script=1630681781862"></script>
+    
+
+</td>
+				</tr>
+				<tr>
+					<td class="esajCelulaCabecalhoServicoCaminho" >
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<a href="" class="esajCaminhoLink"></a>
+
+ &gt;
+
+
+<a href="https://esaj.tjce.jus.br/esaj/portal.do?servico=740000" class="esajCaminhoLink">Bem-vindo</a>
+
+ &gt;
+
+
+
+Identificação
+</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<!-- CONTEUDO -->
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="esajTabelaTitulo">
+	<tr>
+		<td class="esajCelulaMenuSuspenso">
+		<a href="#" onclick="return showMenuSuspenso()"><img src="https://esaj.tjce.jus.br/esaj/tema/padrao/imagens/layout/menuSuspenso.gif" alt="Menu de servi&ccedil;os" width="243" height="21" style="display:block" /></a>
+		<div id="layerMenu" style="display:none">
+			
+
+<!-- MENU -->
+<ul id="esajMenuArea">
+	<li class="esajMenuFechado"><a href="#" onclick="return esajMenu(this)">Consultas Processuais</a>
+<ul>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/cpopg/open.do">Consulta de Processos de 1º Grau</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/cposg5/open.do">Consulta de Processos de 2º Grau</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/cposg/pcpoOrgaosJulgadores.jsp">Consulta da Pauta de Julgamento</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/cjpg">Consulta de Julgados de Primeiro Grau</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/cjsg/consultaCompleta.do">Consultas de Jurisprudência</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/cdje">Diário da Justiça Eletrônico</a></li>
+</ul>
+  </li>
+	<li class="esajMenuFechado"><a href="#" onclick="return esajMenu(this)">Custas Processuais</a>
+<ul>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/ccpweb/iniciarCalculoDeCustas.do?cdTipoCusta=1&flTipoCusta=0&cdServicoCalculoCusta=690003">Custas Iniciais</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/ccpweb/iniciarCalculoDeCustas.do?cdTipoCusta=2&flTipoCusta=1&cdServicoCalculoCusta=690008">Custas Intermediárias</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/ccpweb/iniciarCalculoDeCustas.do?cdTipoCusta=4&flTipoCusta=2&cdServicoCalculoCusta=690006">Custas Complementares</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/ccpweb/iniciarCalculoDeCustas.do?cdTipoCusta=7&flTipoCusta=0&cdServicoCalculoCusta=690004">Incidentes Processuais</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/ccpweb/iniciarCalculoDeCustas.do?cdTipoCusta=8&flTipoCusta=5&cdServicoCalculoCusta=690007">Atos Avulsos</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/ccpweb/iniciarCalculoDeCustas.do?cdTipoCusta=3&flTipoCusta=5&cdServicoCalculoCusta=690010">Certidões</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/ccpweb/iniciarCalculoDeCustas.do?cdTipoCusta=10&flTipoCusta=0&cdServicoCalculoCusta=690005">Execuções Fiscais - Pagamento antes do julgamento dos Embargos</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/ccpweb/iniciarCalculoDeCustas.do?cdTipoCusta=11&flTipoCusta=0&cdServicoCalculoCusta=690002">Execuções Fiscais - Pagamento após o julgamento dos Embargos</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/ccpweb/iniciarCalculoDeCustas.do?cdTipoCusta=9&flTipoCusta=0&cdServicoCalculoCusta=690009">Execuções Fiscais - Pagamento antes da Penhora</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/ccpweb/abrirConsultaCustas.do">Consulta de Custas</a></li>
+</ul>
+  </li>
+	<li class="esajMenuFechado"><a href="#" onclick="return esajMenu(this)">Peticionamento Eletrônico</a>
+<ul>
+	<li class="esajMenuFechado"><a href="#" onclick="return esajMenu(this)">Peticionamento Eletrônico de 1º Grau</a>
+<ul>
+  <li class="esajMenuItem"><a href="/petpg/abrirNovaPeticaoInicial.do?instancia=PG">Peticionamento Inicial - Primeiro Grau</a></li>
+  <li class="esajMenuItem"><a href="/petpg/abrirNovaPeticaoIntermediaria.do?instancia=PG">Peticionamento Intermediário - Primeiro Grau</a></li>
+  <li class="esajMenuItem"><a href="/petpg/abrirVerificacaoRequisitosPet.do">Verificação de Requisitos</a></li>
+  <li class="esajMenuItem"><a href="/petpg/abrirConsultaPeticoes.do">Consulta de Petições - Primeiro Grau</a></li>
+</ul>
+  </li>
+	<li class="esajMenuFechado"><a href="#" onclick="return esajMenu(this)">Peticionamento Eletrônico de 2º Grau - Tribunal de Justiça</a>
+<ul>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/petsg/abrirNovaPeticaoInicial.do?instancia=SG">Peticionamento Inicial de 2º Grau</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/petsg/abrirNovaPeticaoIntermediaria.do?instancia=SG">Peticionamento Intermediário de 2º Grau</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/petsg/abrirConsultaPeticoes.do">Consulta de Petições de 2º Grau</a></li>
+</ul>
+  </li>
+	<li class="esajMenuFechado"><a href="#" onclick="return esajMenu(this)">Peticionamento Eletrônico de 2º Grau - Turmas Recursais</a>
+<ul>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/petcr/abrirNovaPeticaoInicial.do?instancia=CR">Peticionamento Inicial - Turmas Recursais</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/petcr/abrirNovaPeticaoIntermediaria.do?instancia=CR">Peticionamento Intermediário - Turmas Recursais</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/petcr/abrirConsultaPeticoes.do">Consulta de Petições - Turmas Recursais</a></li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="esajMenuFechado"><a href="https://esaj.tjce.jus.br/push/">Push</a></li>
+	<li class="esajMenuFechado"><a href="#" onclick="return esajMenu(this)">Intimações e Citações On-line</a>
+<ul>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/intimacoesweb/abrirConsultaAtosNaoRecebidos.do">Recebimento de Intimações e Citações</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/intimacoesweb/abrirConsultaAtosRecebidos.do">Consulta de Intimações e Citações Recebidas </a></li>
+</ul>
+  </li>
+	<li class="esajMenuFechado"><a href="#" onclick="return esajMenu(this)">Conferência de Documento Digital</a>
+<ul>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/pastadigital/pg/abrirConferenciaDocumento.do">Conferência de Documento Digital do 1ºGrau</a></li>
+  <li class="esajMenuItem"><a href="https://esaj.tjce.jus.br/pastadigital/sg/abrirConferenciaDocumento.do">Conferência de Documento Digital do 2ºGrau</a></li>
+</ul>
+  </li>
+</ul>
+
+		</div>
+		</td>
+		<td class="esajCelulaTituloServico"><h1 class="esajTituloPagina">Identificação</h1></td>
+	</tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0" summary=" ">
+	<tr>
+		<td class="esajCelulaConteudoServico" >
+		
+	
+
+
+  
+
+
+
+    
+
+
+
+
+
+        <table id="conteudoErroObtendoCertificado" width="100%" cellspacing="0" cellpadding="0" border="0" height="30" class="tabelaMensagem" style="padding-bottom: 10px; display: none;">
+            <tbody>
+            <tr>
+                <td width="35" valign="top" class="alert">
+                    <img src="/sajcas/imagens/spw/icoError.gif">
+                </td>
+                <td class="tituloMensagem">
+                    <b>Erro</b>
+                </td>
+            </tr>
+            <tr>
+                <td class="alert">&nbsp;</td>
+                <td>
+                    <ul>
+                        <li id="msgErro"></li>
+                    </ul>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <span class="esajTituloOrientacoes">Orientações</span>
+
+    
+        
+        
+            <ul class="esajUlOrientacoes" id="blocoOrientacoes">
+                
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<li>
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+Os serviços de peticionamento eletrônico, acesso aos autos de processos <b>para advogados vinculados ao processo e usuários vinculados a entidades conveniadas</b> e intimações e citações on-line são restritos para usuários cadastrados.
+
+
+		
+	</li>
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<li>
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+Se você ainda não tem uma identificação para acessar o Portal e-SAJ, utilize a opção "Não estou habilitado".
+
+
+		
+	</li>
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<li>
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+Obs.: Membros de entidades conveniadas com o tribunal devem estar com seus dados atualizados e em situação regular.
+
+
+		
+	</li>
+
+
+
+        
+            </ul>
+        
+    
+
+    
+    <br>
+
+
+        <a href="#" class="esajLinkLogin" id="exibirOrientacoes">Exibir orientações</a>
+        <a href="#" class="esajLinkLogin" id="ocultarOrientacoes">Ocultar orientações</a>
+
+        <table width="360" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top: 10px">
+            <tr>
+                <td valign="top">
+                    <div class="login">
+                        <table class="tableLogin">
+                            <tr>
+                                <td>
+                                    <div class="loginCabecalho">
+                                        <div class="loginCabecalhoEsquerda"><span class="loginCabecalhoTitulo">J&aacute; estou habilitado</span></div>
+                                        <div class="loginCabecalhoDireita">&nbsp;</div>
+                                    </div>
+                                    <div class="caixaPasta">
+                                        <div id="infoCaixa">
+                                            <p>Formas de identificação no portal:</p>
+                                        </div>
+                                        <div id="tabs">
+                                            <ul>
+                                                <li>
+                                                    <a id="linkAbaCpf" href="#aba-cpf" class="esajLinkLogin">
+                                                        CPF/CNPJ
+                                                    </a><span>&nbsp;</span>
+                                                </li>
+                                                <li>
+                                                    <a id="linkAbaCertificado" href="#aba-certificado" class="esajLinkLogin">
+                                                        Certificado digital
+                                                    </a><span>&nbsp;</span>
+                                                </li>
+                                                
+                                            </ul>
+
+                                            <form id="formCertificado" action="/sajcas/login?service=https%3A%2F%2Fesaj.tjce.jus.br%2Fesaj%2Fj_spring_cas_security_check" method="post">
+
+                                                <div id="aba-cpf" class="tabsConteudo">
+
+                                                    <table width="316" border="0" cellspacing="0" cellpadding="0">
+                                                        <tr>
+                                                            
+                                                            <td class="tdLabel"><label for="usernameForm">CPF/CNPJ*:</label></td>
+                                                            
+                                                            <td><input id="usernameForm" name="username" title="Informe seu CPF/CNPJ*: para acessar o Portal e-SAJ.Para acessar com seu certificado digital, pressione CTRL+SHIFT+2." type="text" value=""/></td>
+                                                        </tr>
+                                                        <tr>
+                                                            
+                                                            <td class="tdLabel"><label for="passwordForm">Senha*:</label></td>
+                                                            <td><input id="passwordForm" name="password" type="password" value="" alt="Senha*:" autocomplete="off"/></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>&nbsp;</td>
+                                                            <td><a href="https://esaj.tjce.jus.br/esajperfil/reenviaSenha.do" class="esajLinkLogin">Esqueci minha senha</a></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>&nbsp;</td>
+                                                            <td class="buttons">
+                                                                <!-- campos de controle do webflow -->
+                                                                <input type="hidden" name="lt" value=""/>
+                                                                <input type="hidden" id="flowExecutionKey" name="execution" value="82ea2973-38bd-498e-8e54-bbaa944e7668_ZXlKaGJHY2lPaUpJVXpVeE1pSjkuU25wUGQxTXhkemRYWkVjM1VHTjFZakZDZVRKeloxTmFMMlk0TlRWamVVSlhSR2xHTUd4MFlWSnBNVWgzVUVWMFJIRlZPRVZaZVZKeU5XZDNTbEp0TjJsS2VVbGlibTFHYVVnMU1VZExkbEJWY21sU1IzTnpXbEZqZG1kNU5VMHhZM05VUjNCT2MxVTVORGxoVUhwT2VGZzJha2RrVFhoWmIzSkJhMDF4WkhGRVNVZHJkVkJXTWt0a1JVUk9kbEJNUjNKTVYwZ3JaVGROWTBORFRGSTFhR3gxYW1rNFF5OXVOa1pYWjFOSlUwRk9NRXd2WVhnNWNIVnNWbmhPWXpoaloyMXpSV1oyZERsU1JuSkJTbEo2WldwVlVGa3JXRkp6YVZsRE9HSTRkVGM1TkZGM2VteHNZVlpsUkdaNGJFOTVkM1p3ZEhkVk5FVm1VRFpzTDJaQlozRlVkV3gxV1hOR2FtTnNZemgwSzFaR2FHNXJWMnRyV2xsaFNGVlRkVEJuZVN0WlZuUmhlVWhpVm1VeVJVOU1SM2xyVGs4eVRTOXpkbWx4U3psVWRHWnFUakl2YzFscFRrbFVhV055TURRMU5IVTBXRGxVYnl0ek9YTlNlR3RrZDNWMFMyWnBRVEZQYmtnd2FuY3hkbkJ3U0c5M2JVVmhjVkV3TUhsR1VHRTFLMVJTZGpZNFozSkZWbFpOZDFSVk9GcDJWamhxUm5OSlFWVXdaMFZEUlRkWmFHbENRMUY0V0RseE9FRjVPVXh3Wlc5eVUycEhjRVZhWTAxMlQxZ3hkbEZsUldOb01XUTVhMVp4VGxCRGRtOTBiVUZPTmpad2RUZHpkaTl6VFZoS1ZGbHJSVzlJZUVkR2NrWnZUR2RLU2xOU1dVUXlTbFZHWmtwdmRFZHVRMVpvYW1NeGFXWjRjbXBrWVdWTGMzUnpaMGswZDBwcE1IaDFlRzByZEVGWE9URk5aR1p3SzJSR0swSXZTMjVoWW5Jdk5qWk1Wa1EwT0VoNFkzUkNPVmRLYWxObVpIbFNLM0k1UW5jNFlpOXBZbVZFUVZWblZWZFNRWHBoZUhkdFoyVlBPV2s0TmtaRVUybDJlbEZwZWtsalJVMXpOelI1ZEV4WVZ6QkphRWhITmxSMmNqTXhPRlprVEZKYVdFaHZVVVZ2TVRsWlVVRTFXR2RMY0d4blkxaEpkbGxrU0hWUGNVbFlaSFYyYkUxWmRGcEdPSFZ3YW1kVlpEVlliR2wyVlhwRVlrdEZNbWh6UWtKMFJEZHhSMGRHVkhOdVlrbFRLMDB2VjBOb2FscHViREZNUlM4dk5HMHJla2hZTkVGR1YzQnljMlJQVGpNclIyOVhSazlqTkVWMVlqWlpNWEphWTFCbFozZEVkMUpqWmt0Q1J6TXhVRmMzVTFkSFJtWkllVzVyUzB4dmNIWTRObXh1TTJGdE1EVXlTbU55ZUdsVFRscEJVRFpwYlV4b2RYcFJVV2hTTm5wVmIzZzNWbFZ1U0ZBMVdpOHdZWGx0U1RaR2RGQXdVR2ROVUdoTVUxbHlObU5RTHpkNlNHNHlja2ROYm5CRFMxWnNXbU5FYVZoS2FqUklPVUV3VUVwd1YyTjNabXN5VkVSVVZqVktkMEpYY1ZCdFduVnRZa3RpYVRGeVRGbHFaM1ZZZEVoc1ZTdElTbXBEUXpWRmNGTmxOVXBwTDJsTFJ6UlpWSEI1V2pjMFF6VnRVRXA2U0Vzd00wZDROVkJwY2tOdlJtWklSRUphT0U5eWJUTXhSVU4zUldKQ1FqWndhRTh5ZURKUWNsWndla1ZPV1RJeGRHRkxPSFpKYm1wRlpXMUtXR0ZDUml0dWNWSlBXSGRwYVhGb2RUZDBjeXMzYUdGb1NXOXplRkpHZVM4ek9HRkhhbGRaUldFMGJUZFNlbGxLYXpCc2FXaFFWVmh5ZVd0M2RqTm1VR2t4U0ZReU9YbFFTbEo1VGxwWE0wNXZRamhJUVdOckswVndjM2RSVm1ObmMzVjJPREZOWkd3emJFTlVOWFpUVW5KUWNuSlRiMHhVTW5wUEt6bGthbFZLVWpGaFR6QktPWE5hVURKVFRVRjVja3BZUzJ4eU5rZGpObGcxY1djd0wxcENTa1ZzVG1NeFNrczFXSHBVVWtsd2IybFRZVm94YUd4MFdGcDFOMWx6ZGk4eFYyeGxSVVY0ZUhjelJVNHJUR1ZTZERsSlFUZDRjMHRvYTBvMGJsbFJZVUZZUzBJcmRVOWxXbTgzUjJWSGVFUkhlR0ZwWjNwQ2F6QjFXVmxGVUZRdmRWUjJWVlpUWVc0dmIxWlphVFIyUldwa1VubHhURXA2VDI5RVRYQndOazEyU2pWMFp6UnJZa0pMYldwMFFuRklSbk5RUm5OUWQyaEVXSE40V0ROdFVFNUdkMlJwWld0dE1qQnVRM1pWVkRSR1ZrZDBOVGRCYTNOM1JGVjVaSEZoTHk5TmNFTTRZMnhLYkVWeWVVMHlSbE4wTVV4dFEydFRabGhLWmxoS1RrVlJURTVVT1M5RmNtcDViM1ZyYTJKMmQyaGhWRkJYZGpGSU9FbFZjMWhtV2podlFuZE1UMVJqUzA1c2R6VTFabVZFWlhCdmVGRXJSRkJwSzFCRWEySmpSQ3QwTWxwUU5XeHFWbTlwVEVncldIbDFVRVJPV1RWTFpYUmxhM0kyUmpaNmJFSk1WMVZ1UlZGb2FFMVBjVFJaWW0xSE9WQnJaRWx4TDI1WmEzRmFXblExUWxGNVlTc3pVbWx3UjJ4cWF6ZHBPREE1Y201TWFVWjNUa2xEWkdkUlIwMUdhV1o2T1ZSUFFUTm1NVmR2VVdwTk9VbEdPVGcxVmxKcU0xbzFiM2xQZW5ZeFZ6VnRXVTg0VGxGeGJFaEdSa3B5VUROcVpWbHBXVE1yYTBrNFRtaE9RV3BLVkdsNGJISllZVXBrU3k4eVUwdDZZM1YwT1haMWJWbEliRFJDZW05YWRrUlBaMFJhYjJNclFWQkJhVE5WUzNSdFZFbDFLMUpCU1ROamIxZHRhSFV4WldZNFYzRlRWbGszUkdaalkyZG5abEJ0VEdReVNIVmhkSFl6UlVaQlRVTnZWQ3RPY2s1cE56WTNSbXAyVjBoVlkzUnVZVkZ3WlVWck5HRTRhVVE1V2xBMWVrb3dZMEpMTnpadlVqaFVaalJvVFc1TVZXNVJaMmRJZGxNMVpYWklkbEJZUjFadFkxTmhPRWxxZEUxaFZXODVhR2RJU1ZVdlNYSnBZbVl2UkRWUlVGZHpXRWxzVkV4UmNYUTBWak01T0RkM1FVYzJRV295ZVcxWWNFTjRNR2hsVlZCU2NWZFFaRTAwSzJWMWFGRjJLMHB5WWtZelNVRnVNRUZGWWlzdk5HNDFjSEJhVFZKRVlXbHdlRmhJTW1JeVJIRnNaV012UjB4dUwxUjFVa2x0TUZkdk5uSlhibEJNZURSSU1VRTBUR3BXVkdaSGNVNHlTRzh3U2xGd1RGWjRZemwwVTBaSVZWTmtUVWwwVkhaU1VIZzRLeThyU1U4clZ6bG9PVVJ5UVdneGRXRnFORWwyYzBGcVQycGlOWGRCV2t0bU9TczVSVlI1WmpjMlJXVnFOMmd4SzB0UlZVMXpPU3Q1VEZKRVRHcHRZbWh5U1RReFRYUkdTa0ptWm1oWFVUWnBTWEo2TkRkU2RFdGpWVkJtYzFVNGRXaHdjeTgwVFhkQldHSlhMMlUzVDFFMmNFSjNNRWhsWlVWcVVIazNZUzgxWVd4dFZGSTBZbnBaYVhNeVkyVmFaVzh3WkVWcVlrWm5kV3AwTm1kRVUwMUpZa05LWTBvMWJqTlJiSGx6UjB4TVdUSXdNbEJJVXpaeE1qVjRWSGR0ZUZkUEwwNUpaR1UxV25wWFlVdFdNMlUzWm01U1VXSkpaa2t6U0ZoQ2RHZE1iM2hEVlU5VlZWUTNOMVV5TjBFMlEzY3JSMUJ3Y0RWTlMyUTVZVVkueEhoVVBELUs4TWhldkNyVjh6cFczOFpzZ3VxOWtoOXp4UzFaNzZTNHFlOWtuUUdneGd0NnhKdWdCdU1SVVlqZGxNT213alZYdkJfWVlNNm5TVEJDamc="/>
+                                                                <input type="hidden" name="_eventId" value="submit"/>
+
+                                                                <!-- campos de controle do webflow -->
+                                                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	<input type="submit" name="pbEntrar" value="Entrar" onclick="" onmouseover="B_mOver(this);" onmouseout="B_mOut(this);" onmouseover="B_mOver(this);" onmouseout="B_mOut(this);" class="spwBotaoDefault " id="pbEntrar">
+
+
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+                                                </div>
+
+                                                <div id="aba-certificado" class="tabsConteudo" style="display: none;">
+
+                                                    <input type="hidden" name="signature" id="signature"/>
+                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                                                        <tr>
+                                                            <td>
+                                                                <label for="certificados">Selecione o certificado que deseja utilizar:</label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <input id="certificadoSelecionado" type="hidden" name="certificadoSelecionado"/>
+                                                                <select name="certificado" id="certificados" style="display: inline; position: relative;" title="Selecione seu Certificado digital ou para acessar o Portal e-SAJ com seu número de CPF pressione CTRL+SHIFT+1.">
+                                                                    <option value="">Carregando certificados</option>
+                                                                </select>
+                                                                <a href="#" id="certificadosRecarregar" style="display: none; position: relative;"><img id="certificados-recarregar" style="vertical-align: middle;"
+                                                                                                                                                        src="/sajcas/imagens/certificado/recarregarCertificados.png" alt="Recarregar certificados"/></a>
+                                                            </td>
+                                                        </tr>
+
+                                                        
+                                                            <tr>
+                                                                <td>
+                                                                    <input type="checkbox" name="magistrado" id="magistrado" value="true"/>
+                                                                    <label for="magistrado">Magistrado</label>
+                                                                </td>
+                                                            </tr>
+                                                        
+
+                                                        <tr>
+                                                            <td id="LoginCertContainer">
+                                                                <div id="LoginCert" style="height: 0px;">
+                                                                    <!-- conteudo inserido somente quando a tab e exibida (ver sajIdentificarseView.js) -->
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="buttons">
+                                                                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	    
+	<input type="button" name="pbEntrar" value="Entrar" onclick="" disabled="disabled" onmouseover="B_mOver(this);" onmouseout="B_mOut(this);" class="disabled " id="submitCertificado">
+
+
+                                                            </td>
+                                                        </tr>
+
+                                                    </table>
+                                                </div>
+                                                
+                                            </form>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="caixaRodapeBlank"><span>&nbsp;</span></div>
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="titLogin">
+                                        <div></div>
+                                        <a href="#" id="ancoraHabilitacao">Não estou habilitado</a>
+                                        <img src="imagens/comum/setaLink.png"/>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td valign="top">
+                    
+
+
+
+
+
+
+
+<div id="habilitacao" class="login">
+    <table class="tableHabilitacao">
+        <tr>
+            <td>
+                <div class="titLogin">
+                    <div></div>
+                    <a href="#" id="ancoraLogin">Já estou habilitado</a>
+                    <img src="imagens/comum/setaLink.png"/>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="loginCabecalho">
+                    <div class="loginCabecalhoEsquerda"><span class="loginCabecalhoTitulo">Não estou habilitado</span></div>
+                    <div class="loginCabecalhoDireita">&nbsp;</div>
+                </div>
+                <div class="caixaConteudoHab" style="height:140px ">
+                    <div id="infoCaixaHab">
+                        
+                        <p>Não possui identificação no portal?<br />Informe seu CPF/CNPJ*: abaixo para iniciar seu cadastro.</p>
+                    </div>
+                    <form name="habilitacaoForm" method="post" action="/sajcas/iniciarHabilitacao.do" autocomplete="off" onsubmit="return applySubmit(this, eval('function spwSubmit(t, e){decodificaInputMulSelOnSubmit();if (!IS_enableSubmit) return false; return BENV_isCamposValidos(t); } spwSubmit(this, event);'));">
+                        <table width="316" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td class="tdLabel">CPF/CNPJ*:</td>
+                                <td><input type="text" name="entity.nuCpfCnpj"/></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td class="buttons">
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	<input type="submit" name="pbHabilitar" value="Iniciar cadastro" onclick="" onmouseover="B_mOver(this);" onmouseout="B_mOut(this);" onmouseover="B_mOver(this);" onmouseout="B_mOut(this);" class="spwBotaoDefault " id="pbHabilitar">
+
+
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div class="caixaRodapeBlank"><span>&nbsp;</span></div>
+            </td>
+        </tr>
+    </table>
+    <br/>
+</div>
+<script>
+    $(function () {
+        var controlarCampoOab = function ($select) {
+            if ($select.val() == 1) {
+                $('tr#trOab').show();
+            } else {
+                $('tr#trOab').hide();
+            }
+        };
+        var controlarSelect = function () {
+            var $select = $(this);
+            controlarCampoOab($select);
+        };
+        var $select = $('select#selectPerfil');
+        $select.bind('click', controlarSelect);
+        $select.bind('change', controlarSelect);
+
+        controlarCampoOab($select);
+    });
+</script>
+
+                </td>
+            </tr>
+
+
+            <tr>
+                <td valign="top">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td valign="top">&nbsp;</td>
+            </tr>
+        </table>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+
+
+
+</td>
+</tr>
+</table>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="esajTabelaRodape" summary=" ">
+    <tr>
+        <td class="esajCelulaRodapeCentro">
+            Desenvolvido pela Softplan em parceria com o Tribunal de Justiça do Ceará
+            
+        </td>
+    </tr>
+</table>
+<link href="https://esaj.tjce.jus.br/esaj/tema/padrao/css/saj-popup-modal.css" rel="stylesheet" type="text/css">
+<link href="https://esaj.tjce.jus.br/esaj/tema/padrao/css/popup-beta.css" rel="stylesheet" type="text/css">
+
+
+<script>
+    var appEsajLayout = appEsajLayout || {};
+    appEsajLayout.tituloCertificadoDigital = 'Certificado digital';
+    appEsajLayout.cliente = 'CE';
+    appEsajLayout.emailParaContato = '';
+    appEsajLayout.utilizarBotaoContato = 'false';
+    appEsajLayout.contexto = 'https://esaj.tjce.jus.br/esaj';
+
+    if(window.jQuery) {
+        jQuery.saj = jQuery.saj || {};
+        jQuery.saj.certificado = jQuery.saj.certificado || {};
+        jQuery.saj.certificado.cliente = 'CE';
+        jQuery.saj.certificado.urlConteudoAjudaWebSigner = appEsajLayout.contexto + '/ajudaWebSigner.do';
+        jQuery.saj.certificado.licenca = 'AqYAKi5zYWphZG0udGpzcC5qdXMuYnIsKi5zZWEuc2MuZ292LmJyLCouc29mdHBsYW4uY29tLmJyLCoudGphYy5qdXMuYnIsKi50amFsLmp1cy5iciwqLnRqYW0uanVzLmJyLCoudGpjZS5qdXMuYnIsKi50am1zLmp1cy5iciwqLnRqcHIuanVzLmJyLCoudGpzYy5qdXMuYnIsKi50anNwLmp1cy5ickMAaXA0OjEwLjAuMC4wLzgsaXA0OjEyNy4wLjAuMC84LGlwNDoxNzIuMTYuMC4wLzEyLGlwNDoxOTIuMTY4LjAuMC8xNggAU3RhbmRhcmQAAAABcfpZUu/QD3s2bqedB8v9T7MiMQxcHNu0pUzGzO+7Ta++o+BbAVgPau7lzj6IUFI7RPFkPSnm0ZbCFAVBnKrqinyvE8MwEvmQhFcjlhGK+FfVV5mhVkkxSC3khDEUR8gsAPVvFncyyW2vTU2ODkyGdU0S/g62wHFtSwfGP6OFqlWpZTqbxbEGd1vfe9yHHulTYI7RcsGxaTMD6XgtPlStbOn9DxSYhN3S+4oTtIq7pUR6ETavPqYlXh5hwkxIpTe3Sf4awQucSigQ95sS9g7QpcGyVUVscm0J/rah9YwPCnHShzsttWA9aCmKrNdgFSTTo8TUOmESEP93TH6Z3dss+A==';
+        jQuery.saj.certificado.cofreDigital = jQuery.saj.certificado.cofreDigital || {};
+        jQuery.saj.certificado.cofreDigital.habilitado = 'false' === 'true';
+        jQuery.saj.certificado.cofreDigital.enderecoBase = 'https://esaj.tjce.jus.br/esaj';
+    }
+
+</script>
+<script src="https://esaj.tjce.jus.br/esaj/js/app-bundle.js?n=2978165087"></script>
+<script src="https://esaj.tjce.jus.br/sajcas/seletorVersaoBeta.js?n=2682afcb-b86b-41fe-96d8-542a28d519b7&versao=1"></script>
+<script language="javascript" type="text/JavaScript" src="https://esaj.tjce.jus.br/esaj/js/softplan-websigner-2.5.1.js?n=736057767"></script>
+
+<script language="javascript" type="text/JavaScript" src="https://esaj.tjce.jus.br/esaj/js/saj-certificado.js?n=1326929064"></script>
+
+
+
+<div id="webSignerNaoInstalado" style="display: none;">
+    <p>Para utilização do certificado digital no Portal e-SAJ é necessário a instalação do plug-in Web Signer. Por favor, realize a instalação antes de continuar.</p>
+    <div class="footer_certificado">
+        <button id="redirecionarParaPaginaInstalacao" class="actionPrincipal spwBotaoDefault">Instalar</button>
+        <button class="fecharModalInstalacao spwBotao">Cancelar</button>
+        <button class="spwBotao" onclick="window.open('https://esaj.tjce.jus.br/WebHelp//#id_instalacao_lacuna.htm','_blank')">Ajuda</button>
+    </div>
+</div>
+
+<div id="webSignerNaoSuportado" style="display: none;">
+    <p>O navegador utilizado não é compatível com a tecnologia (Web Signer) necessária para utilização do certificado digital. Por favor, utilize um dos navegadores homologados. Em caso de dúvidas, efetue a validação de requisitos <a href="/petpg/abrirVerificacaoRequisitosPet.do" target="_blank">aqui</a>.</p>
+    <div class="footer_certificado">
+        <button class="fecharModalInstalacao spwBotaoDefault actionPrincipal">OK</button>
+    </div>
+</div>
+
+
+	
+
+
+  
+	
+	
+
+
+
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"errorBeacon":"bam-cell.nr-data.net","licenseKey":"b61bdf610d","agent":"","beacon":"bam-cell.nr-data.net","applicationTime":15,"applicationID":"129544928","transactionName":"MlZRN0QECkMAVERZDgsceTBmSjN1Ixp5fidKRVoGQUoOQxEYVFUHBEZfF2lKEVlORFFaKAFWXRdfAw1TAEVjVTcMVkRNXBYU","queueTime":0}</script></body>
+</html>
