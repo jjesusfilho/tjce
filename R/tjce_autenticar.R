@@ -30,7 +30,6 @@ tjce_autenticar <- function(login = NULL, password = NULL) {
 
     }
 
-  login <- login %>%
 
 
 
